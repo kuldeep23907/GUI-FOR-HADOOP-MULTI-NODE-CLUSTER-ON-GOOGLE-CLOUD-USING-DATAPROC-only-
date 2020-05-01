@@ -1,0 +1,2 @@
+var=$(whoami)
+./View_ME_icon $var

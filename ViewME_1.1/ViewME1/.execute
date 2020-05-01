@@ -1,0 +1,43 @@
+
+
+cd ~/cloud/ViewME
+
+if [ ! -d "$6" ]
+then
+mkdir $6
+cd $6
+touch fields.txt
+echo "$7" >> fields.txt
+echo "$7"  > tempo.txt
+else
+cd $6
+echo "$7" >> fields.txt
+echo "$7"  > tempo.txt
+fi
+
+echo  `cut -d "-" -f 1 tempo.txt` >> values.txt
+echo  `cut -d "-" -f 2 tempo.txt` >> values2.txt
+echo  `cut -d "-" -f 3 tempo.txt` >> values3.txt
+
+
+hadoop fs -mkdir /$4
+hadoop fs -put $3 /$4
+mkdir $1
+cd $1
+cp ~/.getoutput ~/cloud/ViewME/$6/$1
+cp ~/.result ~/cloud/ViewME/$6
+cp $2 ~/cloud/ViewME/$6/$1
+
+javac -cp "/usr/lib/hadoop-mapreduce/hadoop-mapreduce-client-core-2.8.4.jar:/usr/lib/hadoop-mapreduce/hadoop-mapreduce-client-common-2.8.4.jar:/usr/lib/hadoop/hadoop-common-2.8.4.jar:" $1.java
+jar cf $1.jar $1*.class
+hadoop jar $1.jar $1 /$4 /$5
+
+./.getoutput $5
+
+
+
+
+
+
+
+

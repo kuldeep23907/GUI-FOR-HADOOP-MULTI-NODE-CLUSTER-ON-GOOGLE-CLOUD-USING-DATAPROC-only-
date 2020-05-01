@@ -1,0 +1,5 @@
+var="[Desktop Entry]\nVersion=1.0\nType=Application\nName=ViewMe\nComment=hadoop tool\nExec=/home/$1/.ViewME.sh\nIcon=xfce4-splash\nPath=/home/$1/\nTerminal=true\nStartupNotify=true"
+
+echo -e $var > ViewME_icon.desktop
+
+

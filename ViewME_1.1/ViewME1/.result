@@ -1,0 +1,4 @@
+
+cd ~/cloud/ViewME/$1/$2
+echo `grep -i $4 $3` > result.txt
+cat result.txt

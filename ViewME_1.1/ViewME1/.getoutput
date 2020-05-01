@@ -1,0 +1,11 @@
+
+
+hadoop fs -get /$1/part-r-00000 file1
+hadoop fs -get /$1/part-r-00001 file2
+hadoop fs -get /$1/part-r-00002 file3
+cat file1 file2 file3 > file
+sort file > $1fileoutput
+cp $1fileoutput $1fileoutput.csv
+cp $1fileoutput $1fileoutput.txt
+cp $1fileoutput.csv ~/
+cat $1fileoutput

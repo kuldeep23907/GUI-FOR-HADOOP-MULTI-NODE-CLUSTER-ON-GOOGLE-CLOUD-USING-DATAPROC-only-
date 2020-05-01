@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=ViewMe
+Comment=hadoop tool
+Exec=/home/bangiaprachi/.ViewME.sh
+Icon=xfce4-splash
+Path=/home/bangiaprachi/
+Terminal=true
+StartupNotify=true
